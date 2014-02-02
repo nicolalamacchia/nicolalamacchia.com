@@ -1,0 +1,10 @@
+_site
+_drafts
+css/blog.css
+css/home.css
+.hgignore
+.sass-cache
+.hg
+*.swp
+*.swo
+*~

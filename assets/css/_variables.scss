@@ -1,0 +1,130 @@
+// variables {{{
+// solarized {{{
+$base03: #002b36;
+$base02: #073642;
+$base01: #586e75;
+$base00: #657b83;
+$base0: #839496;
+$base1: #93a1a1;
+$base2: #eee8d5;
+$base3: #fdf6e3;
+$yellow: #b58900;
+$orange: #cb4b16;
+$red: #dc322f;
+$magenta: #d33682;
+$violet: #6c71c4;
+$blue: #268bd2;
+$cyan: #2aa198;
+$green: #859900;
+// solarized }}}
+// main {{{
+$colors: $yellow $orange $red $magenta $violet $blue $cyan $green;
+$light-color: $base02;
+$dark-color: $base03;
+$bright-color: $cyan;
+$alt-color: $green;
+$heading-color: $base1;
+$body-link-color: $violet;
+$body-hover-color: $yellow;
+$box-shadow-color: #111;
+$content-color: $base0;
+$content-alt-color: $base01;
+$text-shadow-color: #222;
+$img-folder: "/assets/img";
+
+$mobile-width: 640px;
+$small-width: 480px;
+
+$sans-condensed: "Open Sans Condensed", sans-serif;
+$monospace: Inconsolata, Consolas, "DejaVu Sans Mono", monospace;
+$sans-strong: "Contrail One", sans-serif;
+$sans: "Karla", sans-serif;
+
+$body-background-color: $light-color;
+$body-background-image: url($img-folder + "/noisy_net.png");
+
+$header-height: 140px;
+$header-background: $light-color; // url($img-folder + "/bg.png");
+$header-border-bottom: 1px solid $bright-color;
+
+$title-padding: 30px 30px 0;
+$title-font-family: $sans-condensed;
+$title-font-size: 40px;
+$title-shadow: 0 1px 3px $text-shadow-color;
+
+$subtitle-font-family: $sans-strong;
+$subtitle-font-size: 18px;
+$subtitle-padding: 0 33px;
+
+$fortune-font-family: "Bangers", sans-serif;
+$fortune-font-size: 24px; // $subtitle-font-size;
+$fortune-hpos: right;
+
+$container-width: 800px;
+$container-shadow: 0 0 10px 1px $box-shadow-color;
+$nav-border-color: $bright-color;
+$navbar-height: 50px;
+$navbar-border-size: 1px;
+$navbar-border: $navbar-border-size solid $nav-border-color;
+$navbar-link-color: $heading-color;
+$navbar-hover-color: $body-hover-color;
+$navbar-background: $light-color;
+
+$content-font-family: $sans;
+$content-font-size: 15px;
+$content-line-height: 1.4;
+$content-padding: 20px 50px 15px;
+$content-padding-mobile: 20px 15px 15px;
+$content-footer-font-size: $content-font-size - 2px;
+$content-background: $dark-color;
+$content-selection-fg: $content-background;
+$content-selection-bg: $content-color;
+
+$tldr-padding: 5px 10px;
+
+$img-float-right-margin: 0 0 10px 20px;
+$img-float-left-margin: 0 20px 10px 0;
+$img-border-radius: 3px;
+$img-shadow: 0 0 10px 1px $box-shadow-color;
+
+$post-padding: 0 0 15px;
+$post-bottom-margin: 15px;
+$post-footer-bottom-margin: 30px;
+$postlist-date-margin: 15px;
+$postlist-date-width: 100px;
+$postlist-padding: 10px;
+$postlist-padding-mobile: 30px 0;
+$tags-align: right;
+$tags-margin: 10px;
+$pagetext-bottom-border: 1px solid $light-color;
+
+$code-box-padding: 5px 15px;
+$code-box-shadow: inset 0 0 5px $box-shadow-color;
+$code-text-shadow: 0 -1px $text-shadow-color;
+$code-box-border-radius: 5px;
+$code-box-margin: 15px 0;
+
+$footer-font-family: $subtitle-font-family;
+$footer-font-size: 15px;
+$footer-padding: 0 20px;
+$footer-background: $navbar-background; // url($img-folder + "/bg-footer.png");
+$footer-top-border-size: $navbar-border-size;
+$footer-bottom-border-size: 0;
+$footer-height: $navbar-height;
+$footer-nav-pos: right;
+$footer-nav-shadow: 0 0 3px $box-shadow-color;
+$footer-nav-margin: auto auto auto 10px;
+$footer-license-pos: left;
+$footer-ccimg-valign: -2px;
+$footer-ccimg-padding: 0 5px;
+// main }}}
+// computed {{{
+$body-background: $body-background-color $body-background-image;
+$title-font: $title-font-size $title-font-family;
+$subtitle-font: $subtitle-font-size $subtitle-font-family;
+$fortune-font: $fortune-font-size $fortune-font-family;
+$content-font: #{$content-font-size}/#{$content-line-height} $content-font-family;
+$footer-font: $footer-font-size $footer-font-family;
+$footer-total-height: $footer-height + $footer-top-border-size + $footer-bottom-border-size;
+// computed }}}
+// }}}

@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<dl class=post-list>
+    {% for post in site.posts %}
+    <dt class=date>{{ post.date | date_to_string }}</dt>
+    <dd><a href="{{ post.url }}">{{ post.title }}</a>{{ post.excerpt }}<p>&hellip;</p></dd>
+    {% endfor %}
+</dl>

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class=post-header>
+    <h1>{{ page.title }}</h1>
+    {% if page.tldr %}
+    <a href="#toc_{{ page.tldr | minus: 1 }}" id="tldr" title="This post has a tl;dr section!">tl;dr</a>
+    {% endif %}
+</div>
+<div class="post">
+    {{ content }}
+</div>
+<div class=post-footer>
+    {% if page.date %}
+        <span class=date>{{ page.date | date_to_long_string }}</span>
+    {% else %}
+        <span class=date>{{ site.time | date_to_long_string }}</span>
+    {% endif %}
+    <div class=tags>
+        <ul>
+            {% for tag in page.tags %}
+                <li><a href="/tag/{{ tag }}.html"><i class="fa fa-tag"></i>&nbsp;{{ tag }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

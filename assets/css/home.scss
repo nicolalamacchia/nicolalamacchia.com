@@ -1,0 +1,70 @@
+---
+title: home.scss
+---
+
+@import "variables";
+
+body, html {
+    background-color: $base03;
+    color: $base0;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+.horizontal li {
+    display: inline;
+    margin-right: 15px;
+}
+.fa-inverse {
+    color: $base03;
+}
+.fa-stack {
+    margin-bottom: 15px;
+}
+li {
+    margin: 30px auto;
+}
+li:last-child {
+    margin-right: 0;
+}
+a:link, a:visited
+{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover, a:active
+{
+    color: $base01;
+}
+#container {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+#content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.nf-header {
+    color: $red;
+    margin-bottom: 25px;
+}
+.nf-title {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.nf {
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+p[class*='nf'] {
+    font-family: $subtitle-font-family;
+}

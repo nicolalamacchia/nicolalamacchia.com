@@ -1,0 +1,41 @@
+// mixins {{{
+@mixin link-a($link-color: $body-link-color, $hover-color: $body-hover-color, $active-color: $hover-color, $link-shadow: none, $hover-shadow: $link-shadow, $active-shadow: $hover-shadow) {
+  &:link, &:visited {
+    text-decoration: none;
+    color: $link-color;
+    text-shadow: $link-shadow;
+  }
+  &:hover {
+    color: $hover-color;
+    text-shadow: $hover-shadow;
+  }
+  &:active {
+    color: $active-color;
+    text-shadow: $active-shadow;
+  }
+}
+@mixin navbar-ul($link-color: $body-link-color, $hover-color: $body-hover-color, $active-color: $hover-color, $link-shadow: none, $hover-shadow: $link-shadow, $active-shadow: $hover-shadow, $margin: 0, $inline: true) {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    @if $inline {
+      display: inline;
+    }
+    margin: $margin;
+    a {
+      @include link-a($link-color, $hover-color, $active-color, $link-shadow, $hover-shadow, $active-shadow);
+    }
+  }
+}
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+// mixins }}}

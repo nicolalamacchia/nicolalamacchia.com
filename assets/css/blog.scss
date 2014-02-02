@@ -1,0 +1,267 @@
+---
+title: blog.scss
+---
+
+// import stuff [[[
+@import "variables";
+@import "mixins";
+@import "solarized.css";
+@import "normalize.css";
+// ]]]
+// parts [[[
+// header [[[
+code {
+  font-family: $monospace;
+  color: $heading-color;
+}
+.highlight {
+  padding: $code-box-padding;
+  text-shadow:$code-text-shadow;
+  margin: $code-box-margin;
+  overflow: auto;
+  @include border-radius($code-box-border-radius);
+  @include box-shadow($code-box-shadow);
+  pre {
+    white-space: pre;
+  }
+}
+.header {
+  color: $heading-color;
+  height: $header-height;
+  background: $header-background;
+  border-bottom: $header-border-bottom;
+}
+%title-link {
+  a {
+    @include link-a($heading-color, $body-hover-color, $link-shadow: $title-shadow);
+  }
+}
+.title {
+  @extend %title-link;
+  padding: $title-padding;
+  font: $title-font;
+}
+.subtitle {
+  @extend %title-link;
+  padding: $subtitle-padding;
+  font: $subtitle-font;
+  text-shadow: $title-shadow;
+}
+// for fortune.js
+@for $c from 1 through length($colors) {
+  .shadow-col#{$c} {
+    text-shadow: 0 0 $fortune-font-size/2 nth($colors, $c);
+  }
+}
+#fortune {
+  font: $fortune-font;
+  float: $fortune-hpos;
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+// header ]]]
+// content [[[
+#tldr {
+  font-family: $monospace;
+  padding: $tldr-padding;
+  border: 1px solid $light-color;
+  @include border-radius($code-box-border-radius);
+  @include link-a($violet, $navbar-hover-color, $link-shadow: $footer-nav-shadow);
+}
+.date {
+  font-family: $monospace;
+  color: $alt-color;
+}
+dl {
+  padding: $postlist-padding;
+  @media (max-width: $mobile-width) {
+    padding: $postlist-padding-mobile;
+  }
+}
+dt {
+  @extend .date;
+  float: left;
+  clear: left;
+  width: $postlist-date-width;
+  text-align: right;
+}
+dd {
+  p { // excerpt
+    text-align: justify;
+  }
+  margin: 0 0 0 $postlist-date-width + $postlist-date-margin;
+}
+.content {
+  font: $content-font;
+  padding: $content-padding;
+  @media (max-width: $mobile-width) {
+    padding: $content-padding-mobile;
+  }
+  color: $content-color;
+  .no-small {
+    @media (max-width: $small-width) {
+      display: none;
+    }
+  }
+  .no-mobile {
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    &.img-right {
+      float: right;
+      margin: $img-float-right-margin;
+    }
+    &.img-left {
+      float: left;
+      margin: $img-float-left-margin;
+    }
+    &.img-center {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @include box-shadow($img-shadow);
+    @include border-radius($img-border-radius);
+  }
+}
+::selection {
+  color: $content-selection-fg;
+  background: $content-selection-bg;
+}
+::-moz-selection {
+  color: $content-selection-fg;
+  background: $content-selection-bg;
+}
+.page-content {
+  padding: $post-padding;
+  margin-bottom: $post-bottom-margin;
+  text-align: justify;
+  @media (max-width: $small-width) {
+    text-align: left;
+  }
+}
+.post {
+  @extend .page-content;
+  border-bottom: $pagetext-bottom-border;
+}
+.post-footer {
+  font-size: $content-footer-font-size;
+  margin-bottom: $post-footer-bottom-margin;
+}
+.tags {
+  ul {
+    @include navbar-ul();
+  }
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+  float: $tags-align;
+  a {
+    @if $tags-align == right {
+      margin-left: $tags-margin;
+    } @else {
+      margin-right: $tags-margin;
+    }
+  }
+}
+.status-online {
+  color: $green;
+}
+.status-offline {
+  color: $red;
+}
+// content ]]]
+// footer [[[
+.footer {
+  font: $footer-font;
+  padding: $footer-padding;
+  background: $footer-background;
+  color: $content-color;
+  border-top: $navbar-border;
+  line-height: $footer-height;
+  .license {
+    float: $footer-license-pos;
+    p {
+      display: inline-block;
+      @media (max-width: $mobile-width) {
+        display: none;
+      }
+      margin: 0;
+    }
+    img {
+      vertical-align: $footer-ccimg-valign;
+      padding: $footer-ccimg-padding;
+    }
+  }
+  .footernav {
+    float: $footer-nav-pos;
+    ul {
+      @include navbar-ul($navbar-link-color, $navbar-hover-color, $link-shadow: $footer-nav-shadow, $margin: $footer-nav-margin);
+      li.nav-social {
+        @media (max-width: $small-width) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// footer ]]]
+// sticky [[[
+.wrapper {
+  min-height: 100%;
+  background: $content-background;
+  margin-bottom: -($footer-total-height);
+  @include box-shadow($container-shadow);
+}
+.wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.footer, .wrapper:after {
+  height: $footer-height;
+}
+// sticky ]]]
+// parts ]]]
+// body [[[
+body, html {
+    height: 100%;
+    margin: 0;
+    background: $body-background;
+}
+body {
+    overflow-y: scroll;
+}
+a:link, a:visited {
+  color: $body-link-color;
+  text-decoration: none;
+}
+a:hover {
+  color: $body-hover-color;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font-family;
+  color: $heading-color;
+  text-shadow: $title-shadow;
+}
+.container {
+    height: 100%;
+    max-width: $container-width;
+    margin: auto;
+}
+// Opera fix
+body:before {
+    content: "";
+    height: 100%;
+    float: left;
+    width: 0;
+    margin-top: -32767px;
+}
+// ]]]
+
+// vim: set fmr=[[[,]]] :
